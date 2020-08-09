@@ -1,5 +1,4 @@
 @import url('./assets/css/reset.css');
-@import url('./assets/css/form.elements.css');
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap&subset=latin-ext');
 
 $fontStack: 'Poppins', sans-serif;
@@ -83,15 +82,22 @@ table tr {
     }
   }
   .agesSelect{border-top:1px solid #ececec; border-bottom:1px solid #ececec;padding:20px;
-    .form-radio{float:left; width:calc(100% - 300px); display: flex; align-items: center; height: 40px; position:relative;
+    .form-radio{float:left; width:calc(100% - 250px); display: flex; align-items: center; height: 40px; position:relative;
       .ageFilterHead{float:left; margin-right:25px; font-size:16px; font-weight:600;}
-      .radio{margin-right: 40px; float:left; margin-bottom:0;}
+      .radio{margin-right: 40px; float:left; margin-bottom:0;
+        label{float: left; width: 100%; display: flex; align-items: center; justify-content: center; cursor:pointer;
+          input{width:20px; height:20px; margin-right:10px; margin-top: 0;}
+        }
+      }
     }
-    .characterNameSearch{float:left; width:300px; font-size:16px; padding:10px; border:1px solid #ececec; outline:0; height: 40px;}
+    .characterNameSearch{float:left; width:250px; font-size:16px; padding:10px; border:1px solid #ececec; outline:0; height: 40px;}
   }
   .costSelect{border-bottom:1px solid #ececec;
     .cItem{float:left; width:100%; padding:20px;
-      .checkbox{float:left; width:100px;}
+      .checkbox{float:left; width:100px; display:flex; align-items:center;
+        label{cursor:pointer; display:flex; align-items:center; margin-top: 0;}
+        input{margin-right:10px; width:15px; height:15px;}
+      }
       .cSlider{float:left; width:calc(100% - 150px);
         input{width:100%;}
       }

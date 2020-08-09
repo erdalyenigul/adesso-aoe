@@ -55,7 +55,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import backToTop from '../components/backToTop'
 
 export default {
@@ -71,7 +70,7 @@ export default {
   },
   methods: {
     getDetailData() {
-      axios({
+      this.$http({
         method: 'get',
         url: 'https://api.jsonbin.io/b/5f2d7679dddf413f95bf132f'
       }).then((response) => {

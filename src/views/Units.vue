@@ -6,27 +6,27 @@
         <div class="ageFilterHead">Age Filter : </div>
         <div class="radio">
           <label>
-            <input v-model="ageSelect" value="" type="radio" name="radio" checked="checked" /><i class="helper"></i>All
+            <input v-model="ageSelect" value="" type="radio" name="ageSelect" checked="checked" />All
           </label>
         </div>
         <div class="radio">
           <label>
-            <input v-model="ageSelect" value="Dark" type="radio" name="radio"/><i class="helper"></i>Dark
+            <input v-model="ageSelect" value="Dark" type="radio" name="ageSelect" />Dark
           </label>
         </div>
         <div class="radio">
           <label>
-            <input v-model="ageSelect" value="Feudal" type="radio" name="radio"/><i class="helper"></i>Feudal
+            <input v-model="ageSelect" value="Feudal" type="radio" name="ageSelect" />Feudal
           </label>
         </div>
         <div class="radio">
           <label>
-            <input v-model="ageSelect" value="Castle" type="radio" name="radio"/><i class="helper"></i>Castle
+            <input v-model="ageSelect" value="Castle" type="radio" name="ageSelect" />Castle
           </label>
         </div>
         <div class="radio">
           <label>
-            <input v-model="ageSelect" value="Imperial" type="radio" name="radio"/><i class="helper"></i>Imperial
+            <input v-model="ageSelect" value="Imperial" type="radio" name="ageSelect" />Imperial
           </label>
         </div>
       </div>
@@ -36,7 +36,7 @@
       <div class="cItem">
         <div class="checkbox">
           <label>
-            <input v-model="costTypeWood" value="false" type="checkbox" /><i class="helper"></i>Wood
+            <input v-model="costTypeWood" type="checkbox" />Wood
           </label>
         </div>
         <div class="cSlider">
@@ -47,7 +47,7 @@
       <div class="cItem">
         <div class="checkbox">
           <label>
-            <input v-model="costTypeFood" value="1" type="checkbox" /><i class="helper"></i>Food
+            <input v-model="costTypeFood" type="checkbox" />Food
           </label>
         </div>
         <div class="cSlider">
@@ -58,7 +58,7 @@
       <div class="cItem">
         <div class="checkbox">
           <label>
-            <input v-model="costTypeGold" value="1" type="checkbox" /><i class="helper"></i>Gold
+            <input v-model="costTypeGold" type="checkbox" />Gold
           </label>
         </div>
         <div class="cSlider">
@@ -75,9 +75,9 @@
           <td>Age</td>
           <td>Cost</td>
         </tr>
-        <tr v-for="(unit, index) in unitsListFinal" :key="index">
+        <tr v-for="unit in unitsListFinal" :key="unit.id">
           <td>{{ unit.id }}</td>
-          <td><router-link  :to="{ name: 'Unit_detail', params: {unitId: unit.id, unitDetail: unit} }">{{ unit.name }}</router-link></td>
+          <td><router-link  :to="{ name: 'Unit_detail', params: {unitId: unit.id} }">{{ unit.name }}</router-link></td>
           <td>{{ unit.age }}</td>
           <td><span v-for="(value, name, index) in unit.cost" :key="index" :id="name">{{ name }} {{ value }}</span></td>
         </tr>
@@ -87,7 +87,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import backToTop from '../components/backToTop'
 
 export default {
@@ -110,7 +109,7 @@ export default {
   },
   methods: {
     getData() {
-      axios({
+      this.$http({
         method: 'get',
         url: 'https://api.jsonbin.io/b/5f2d7679dddf413f95bf132f'
       }).then((response) => {
@@ -137,7 +136,15 @@ export default {
   },
   computed: {
     filterWatch() {
-      return this.ageSelect, this.ageSelectName, this.costTypeWood, this.costTypeFood, this.costTypeGold, this.woodSliderValue, this.foodSliderValue, this.goldSliderValue, Date.now();
+      return this.ageSelect, 
+      this.ageSelectName, 
+      this.costTypeWood, 
+      this.costTypeFood, 
+      this.costTypeGold, 
+      this.woodSliderValue, 
+      this.foodSliderValue, 
+      this.goldSliderValue, 
+      Date.now();
     }
   },
   watch: {
