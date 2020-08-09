@@ -137,7 +137,7 @@ export default {
   },
   computed: {
     filterWatch() {
-      return this.ageSelect, this.ageSelectName, this.costTypeWood, this.costTypeFood, this.costTypeGold, this.woodSliderValue, this.foodSliderValue, this.golddSliderValue, Date.now();
+      return this.ageSelect, this.ageSelectName, this.costTypeWood, this.costTypeFood, this.costTypeGold, this.woodSliderValue, this.foodSliderValue, this.goldSliderValue, Date.now();
     }
   },
   watch: {
