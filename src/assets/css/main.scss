@@ -97,10 +97,10 @@ table tr {
 
 .unitDetail{
   .udList{float:left; width:100%;
-    tr{display:flex; align-items:center; height:70px; padding:0 20px; border-bottom: 1px solid #ececec;
-      td{float:left; display:flex; align-items:center; font-size:14px;
-        &:nth-child(1){width:20%; font-weight:600;}
-        &:nth-child(2){width:80%; padding-left:5px;}
+    tr{display:flex; align-items:center; min-height:70px; padding:0 20px; border-bottom: 1px solid #ececec;
+      td{float:left; display:flex; align-items:center; font-size:14px; padding:10px 0;
+        &:nth-child(1){width:140px; font-weight:600;}
+        &:nth-child(2){width:calc(100% - 140px); padding-left:5px;}
       }
     }
   }
