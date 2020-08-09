@@ -97,13 +97,11 @@ export default {
   data() {
     return {
       unitsList: [],
-      checkboxFilterList: [],
       ageSelect: '',
       ageSelectName: '',
       woodSliderValue: 200,
       foodSliderValue: 200,
       goldSliderValue: 200,
-      costType: 0,
       costTypeWood: '',
       costTypeFood: '',
       costTypeGold: '',
