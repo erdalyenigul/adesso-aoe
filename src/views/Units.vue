@@ -123,7 +123,7 @@ export default {
     unitsListFilter() {
       this.unitsListFinal = [];
       this.unitsList.filter(unit => {
-        if( 
+        if ( 
         ( !this.ageSelect || unit.age.match(this.ageSelect) ) &&
         ( !this.ageSelectName || (unit.name.toLowerCase().indexOf(this.ageSelectName.toLowerCase()) > -1) ) &&
         ( !this.costTypeWood || (unit.cost != null && unit.cost.Wood != null && unit.cost.Wood <= this.woodSliderValue) ) && 
@@ -137,15 +137,7 @@ export default {
   },
   computed: {
     filterWatch() {
-      return this.ageSelect, 
-      this.ageSelectName, 
-      this.costTypeWood, 
-      this.costTypeFood, 
-      this.costTypeGold, 
-      this.woodSliderValue, 
-      this.foodSliderValue, 
-      this.golddSliderValue, 
-      Date.now();
+      return this.ageSelect, this.ageSelectName, this.costTypeWood, this.costTypeFood, this.costTypeGold, this.woodSliderValue, this.foodSliderValue, this.golddSliderValue, Date.now();
     }
   },
   watch: {
